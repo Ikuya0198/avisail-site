@@ -21,7 +21,7 @@
   
   /* 【写真1枚目】トップ背景画像 (Github上のパスに変更してください) */
   /* IMAGE EDIT HERE 1 */
-  --home-hero: url('https://placehold.co/1920x1080/05080f/1e293b?text=Ocean+Horizon'); 
+  --home-hero: url('HERO.jpg'); 
 }
 
 *{ box-sizing: border-box; }
