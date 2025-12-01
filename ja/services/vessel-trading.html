@@ -1,88 +1,261 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Vessel Trading | Avisail</title>
-<link rel="canonical" href="https://avisail.com/ja/services/vessel-trading.html">
-<link rel="alternate" hreflang="ja" href="https://avisail.com/ja/index.html">
-<link rel="alternate" hreflang="en" href="/">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>船舶売買 | Avisail Technologies</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --line: rgba(255,255,255,.08);
-  --hero-bg: url('/images/vessel-trading-hero.jpg');
-}
-*{ box-sizing: border-box; }
-html,body{ margin:0; background:#0a0f1a; color:#e9f0ff; font-family:'Inter','Noto Sans JP',sans-serif; line-height:1.7; }
-a{ color:#cfe2ff; text-decoration:none; }
-.wrap{ max-width:1200px; margin:0 auto; padding:0 20px; }
-header{ position:sticky; top:0; z-index:50; background:rgba(10,15,26,.9); border-bottom:1px solid var(--line); backdrop-filter:blur(10px); }
-.nav{ display:flex; align-items:center; justify-content:space-between; height:70px; }
-.brand{ display:flex; align-items:center; gap:12px; font-weight:600; }
-.logo{ width:32px; height:32px; border-radius:8px; background:conic-gradient(from 210deg,#6aa6ff,#7ef0d4); }
-nav ul{ display:flex; gap:24px; list-style:none; margin:0; padding:0; align-items:center; font-size:0.95rem; }
-.menu-item{ position:relative; padding:10px 0; }
-.dropdown{ position:absolute; top:100%; left:-10px; min-width:200px; background:#0d1424; border:1px solid var(--line); border-radius:12px; padding:12px; display:none; flex-direction:column; gap:8px; }
-.menu-item:hover .dropdown{ display:flex; }
-.dropdown a{ padding:6px 12px; border-radius:6px; color:#9fb0cc; }
-.dropdown a:hover{ background:rgba(255,255,255,0.05); color:#fff; }
-.lang-switch{ border:1px solid var(--line); padding:6px 12px; border-radius:6px; color:#9fb0cc; font-size:0.85rem; }
-
-.page-hero{
-  padding:140px 0 100px; text-align:center;
-  background: linear-gradient(rgba(10,15,26,0.7), rgba(10,15,26,0.9)), var(--hero-bg) center/cover;
-}
-.page-hero h1{ font-size:3rem; margin-bottom:24px; }
-.muted{ color:#9fb0cc; max-width:700px; margin:0 auto; }
-
-section{ padding:80px 0; border-bottom:1px solid var(--line); }
-.grid-2{ display:grid; grid-template-columns:repeat(2,1fr); gap:32px; }
-.card{ background:rgba(255,255,255,0.02); border:1px solid var(--line); border-radius:24px; padding:32px; backdrop-filter:blur(5px); }
-@media(max-width:980px){ .grid-2{ grid-template-columns:1fr; } nav ul{ display:none; } }
-footer .wrap{ padding:20px 0; }
+:root{--line:rgba(255,255,255,.08);--hero-bg:url('/images/vessel-trading-hero.jpg');}
+*{box-sizing:border-box;}
+html,body{margin:0;background:#0a0f1a;color:#e9f0ff;font-family:'Inter','Noto Sans JP',sans-serif;line-height:1.7;}
+html{scroll-behavior:smooth;}
+a{color:#cfe2ff;text-decoration:none;transition:color 0.3s;}
+a:hover{color:#7ef0d4;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px;}
+header{position:sticky;top:0;z-index:50;background:rgba(10,15,26,.9);border-bottom:1px solid var(--line);backdrop-filter:blur(10px);}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px;}
+.brand{display:flex;align-items:center;gap:12px;font-weight:600;color:#fff;}
+.logo{width:32px;height:32px;border-radius:8px;background:conic-gradient(from 210deg,#6aa6ff,#7ef0d4);}
+nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;align-items:center;font-size:0.95rem;}
+.menu-item{position:relative;padding:10px 0;}
+.dropdown{position:absolute;top:100%;left:-10px;min-width:200px;background:#0d1424;border:1px solid var(--line);border-radius:12px;padding:12px;display:none;flex-direction:column;gap:8px;box-shadow:0 10px 30px rgba(0,0,0,0.5);}
+.menu-item:hover .dropdown{display:flex;}
+.dropdown a{padding:6px 12px;border-radius:6px;color:#9fb0cc;}
+.dropdown a:hover{background:rgba(255,255,255,0.05);color:#fff;}
+.globe-icon{font-size:1.2rem;cursor:pointer;color:#9fb0cc;transition:color 0.3s;}
+.globe-icon:hover{color:#7ef0d4;}
+.page-hero{padding:140px 0 100px;text-align:center;background:linear-gradient(rgba(10,15,26,0.7),rgba(10,15,26,0.9)),var(--hero-bg) center/cover;}
+.page-hero h1{font-size:3.5rem;margin-bottom:24px;color:#fff;font-weight:700;}
+.page-hero .lead{color:#cfe2ff;max-width:800px;margin:0 auto 16px;font-size:1.2rem;}
+.muted{color:#9fb0cc;}
+section{padding:100px 0;border-bottom:1px solid var(--line);}
+h2{font-size:2rem;margin-bottom:40px;color:#fff;display:flex;align-items:center;gap:16px;}
+h2::before{content:'';width:4px;height:32px;background:linear-gradient(to bottom,#6aa6ff,#7ef0d4);display:block;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;}
+.card{background:rgba(255,255,255,0.02);border:1px solid var(--line);border-radius:24px;padding:32px;backdrop-filter:blur(5px);transition:transform 0.3s,border-color 0.3s;height:100%;display:flex;flex-direction:column;}
+.card:hover{transform:translateY(-5px);border-color:rgba(106,166,255,0.3);}
+.card h3{color:#fff;margin-top:0;font-size:1.3rem;}
+.card p{color:#9fb0cc;margin-bottom:24px;flex-grow:1;}
+.btn{display:inline-block;padding:12px 28px;border-radius:50px;border:1px solid var(--line);background:rgba(255,255,255,0.05);color:#e9f0ff;font-size:0.95rem;transition:all 0.3s;}
+.btn:hover{border-color:rgba(106,166,255,0.5);transform:translateY(-2px);}
+.cta{display:inline-block;padding:12px 28px;border-radius:50px;background:linear-gradient(135deg,#6aa6ff,#7ef0d4);color:#06101a;font-weight:700;font-size:0.95rem;box-shadow:0 10px 20px rgba(106,166,255,.2);border:none;transition:all 0.3s;}
+.cta:hover{transform:translateY(-2px);box-shadow:0 15px 30px rgba(106,166,255,.3);}
+.highlight-box{background:rgba(126,240,212,0.05);border:1px solid rgba(126,240,212,0.2);border-radius:16px;padding:40px;margin:40px 0;}
+footer{background:rgba(5,8,15,0.8);padding:60px 0 30px;border-top:1px solid var(--line);}
+.footer-content{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:40px;}
+.footer-col h4{color:#fff;font-size:1.1rem;margin-bottom:20px;}
+.footer-col ul{list-style:none;padding:0;margin:0;}
+.footer-col ul li{margin-bottom:12px;}
+.footer-col a{color:#9fb0cc;font-size:0.9rem;}
+.footer-col a:hover{color:#7ef0d4;}
+.footer-bottom{border-top:1px solid var(--line);padding-top:30px;text-align:center;color:#9fb0cc;font-size:0.85rem;}
+@media(max-width:980px){.grid-3,.grid-2{grid-template-columns:1fr;}.footer-content{grid-template-columns:1fr;}nav ul{display:none;}.page-hero h1{font-size:2.5rem;}}
 </style>
 </head>
 <body>
-  <header>
-    <div class="wrap nav">
-      <div class="brand"><div class="logo"></div><span>Avisail Technologies</span></div>
-      <nav>
-        <ul>
-          <li><a href="/ja/index.html">Home</a></li>
-          <li><a href="/ja/about.html">About</a></li>
-          <li class="menu-item">
-            <span>Services ▾</span>
-            <div class="dropdown">
-              <a href="/ja/services/vessel-trading.html">Vessel Trading</a>
-              <a href="/ja/services/investment.html">Investment</a>
-              <a href="/ja/services/technology.html">Technology</a>
-            </div>
-          </li>
-          <li><a href="/ja/contact.html">Contact</a></li>
-          <li><a class="lang-switch" href="/">English</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header>
+<div class="wrap nav">
+<div class="brand"><div class="logo"></div><span>Avisail Technologies</span></div>
+<nav>
+<ul>
+<li><a href="/ja/index.html">ホーム</a></li>
+<li><a href="/ja/about.html">会社概要</a></li>
+<li class="menu-item"><span>サービス ▾</span>
+<div class="dropdown">
+<a class="active" href="/ja/services/vessel-trading.html">船舶売買</a>
+<a href="/ja/services/investment.html">投資運用</a>
+<a href="/ja/services/technology.html">テクノロジー</a>
+</div>
+</li>
+<li><a href="/ja/contact.html">お問い合わせ</a></li>
+<li class="menu-item"><span class="globe-icon">🌐 ▾</span>
+<div class="dropdown">
+<a href="/en/services/vessel-trading.html">English</a>
+<a href="/ja/services/vessel-trading.html">日本語</a>
+</div>
+</li>
+</ul>
+</nav>
+</div>
+</header>
 
 <main class="page-hero">
-  <div class="wrap">
-    <h1>船舶貿易</h1>
-    <p class="muted">アジアと欧州・中東の商圏をつなぎ、AI更新在庫・安全な決済枠組み・投資連動型スキームを組み合わせ、最適解を提案します。</p>
-  </div>
+<div class="wrap">
+<h1>船舶売買</h1>
+<p class="lead">AI駆動型在庫管理と革新的な決済構造によるグローバル船舶マッチングサービス。</p>
+<p class="muted">安全なエスクローサービスとETFベースの資金調達オプションでアジアと世界を繋ぐ</p>
+</div>
 </main>
 
 <section class="wrap">
-  <h2 style="font-size:2rem; margin-bottom:40px; display:flex; align-items:center; gap:16px;">提供価値</h2>
-  <div class="grid-2">
-    <div class="card"><h3>在庫ソーシング</h3><p style="color:#9fb0cc">日次更新のデータベースから条件に合う候補を即時提示。</p></div>
-    <div class="card"><h3>支払い・法務</h3><p style="color:#9fb0cc">弁護士・信託口座等を活用した安全な支払い設計。</p></div>
-    <div class="card"><h3>検査・輸送</h3><p style="color:#9fb0cc">第三者検査・保険・輸送手配まで一気通貫。</p></div>
-    <div class="card"><h3>透明性</h3><p style="color:#9fb0cc">工程・費用・リスクを事前に明示し、意思決定を支援。</p></div>
-  </div>
+<h2>AI駆動型船舶ソーシング</h2>
+<div class="highlight-box">
+<h3 style="color:#7ef0d4;margin-top:0;font-size:1.5rem;">インテリジェント在庫管理システム</h3>
+<p>当社独自のAIプラットフォームは、日本、韓国、東欧の船舶市場を継続的に監視し、リアルタイムの在庫更新と買い手と売り手のインテリジェントマッチングを提供します。静的リストに依存する従来のブローカーとは異なり、当社のシステムは複数のソースからデータを動的に集約し、最適なマッチを即座に表示します。</p>
+<div style="margin-top:32px;">
+<a href="/products/avisail-trading-jp.html" class="cta">売買プラットフォーム詳細を見る</a>
+<a href="#vessel-types" class="btn" style="margin-left:16px;">船舶タイプを見る</a>
+</div>
+</div>
+
+<div class="grid-2" style="margin-top:60px;">
+<div class="card">
+<h3>自動市場スキャン</h3>
+<p><strong>リアルタイムデータ集約：</strong></p>
+<p>アジアと欧州の造船所、ブローカー、船隊運営者からの日次更新。船舶仕様、価格、在庫状況の自動解析。AIによるリスト分類と標準化。海事データベースと船級協会との統合。</p>
+</div>
+<div class="card">
+<h3>インテリジェントマッチング</h3>
+<p><strong>買い手・売り手最適化：</strong></p>
+<p>機械学習アルゴリズムが買い手要件と在庫をマッチング。価格トレンドと市場タイミングの予測分析。クライアント基準に合致する新規船舶の自動アラート。多基準フィルタリング（船種、船齢、旗国、価格帯、納期）。</p>
+</div>
+<div class="card">
+<h3>デューデリジェンス自動化</h3>
+<p><strong>リスク評価ツール：</strong></p>
+<p>売り手と船舶の自動バックグラウンドチェック。過去の所有権とインシデント追跡。船級協会証明書検証。旗国コンプライアンス監視。AIによる潜在的問題のレッドフラグ検出。</p>
+</div>
+<div class="card">
+<h3>取引管理</h3>
+<p><strong>エンドツーエンド プロセスサポート：</strong></p>
+<p>デジタル文書管理と契約管理。問い合わせから納品までのマイルストーン追跡。マルチパーティコミュニケーションプラットフォーム。法律・金融サービスプロバイダーとの統合。</p>
+</div>
+</div>
 </section>
 
-<footer><div class="wrap"><p>© 2025 Avisail Technologies — All rights reserved.</p></div></footer>
+<section class="wrap" id="vessel-types">
+<h2>船舶専門分野</h2>
+<p class="muted" style="max-width:800px;margin-bottom:40px;">アジア、中東、新興国の地域市場にサービスを提供する3つの高需要船舶カテゴリーに特化しています。</p>
+<div class="grid-3">
+<div class="card">
+<h3>コースター（500-5000 DWT）</h3>
+<p><strong>地域貨物輸送：</strong> 沿岸および島嶼間貿易ルートに最適な近海輸送船。</p>
+<p><strong>主要市場：</strong> フィリピン、インドネシア、中東、西アフリカ</p>
+<p><strong>一般的用途：</strong> 一般貨物、バルク商品、地域サプライチェーン</p>
+<p><strong>調達地域：</strong> 日本（老朽船隊置換）、韓国（新造船）、東欧（改修船）</p>
+</div>
+<div class="card">
+<h3>タグボート（1000-5000 HP）</h3>
+<p><strong>港湾・沖合作業：</strong> 港湾作業、曳航、沖合支援に不可欠。</p>
+<p><strong>主要市場：</strong> UAE、オマーン、サウジアラビア、シンガポール、フィリピン</p>
+<p><strong>一般的用途：</strong> 船舶補助、バージ曳航、沖合プラットフォーム支援</p>
+<p><strong>調達地域：</strong> 日本（高品質中古）、韓国（最新建造）、オランダ（専門沖合タグ）</p>
+</div>
+<div class="card">
+<h3>揚陸艇（LCT/LCM）</h3>
+<p><strong>浅水域物流：</strong> 港湾インフラのない遠隔地向け専門船。</p>
+<p><strong>主要市場：</strong> フィリピン、インドネシア、太平洋諸島、ミャンマー</p>
+<p><strong>一般的用途：</strong> 建設資材、重機、災害救援、島嶼供給</p>
+<p><strong>調達地域：</strong> 日本（政府余剰）、韓国（商業建造）、シンガポール（元軍用転換）</p>
+</div>
+</div>
+</section>
+
+<section class="wrap">
+<h2>革新的な決済構造</h2>
+<p class="muted" style="max-width:800px;margin-bottom:40px;">買い手リスクを軽減し、取引完了を加速するよう設計された柔軟な資金調達オプションを提供します。</p>
+<div class="grid-2">
+<div class="card">
+<h3>エスクローベース取引</h3>
+<p><strong>安全なマイルストーン支払い：</strong> 中立第三者エスクローエージェント（法律事務所、銀行）が資金を保有し、事前定義されたマイルストーンに基づいて解放：契約締結時の初期デポジット、調査完了時の検査支払い、引渡しと所有権登録時の残高移転。</p>
+<p><strong>リスク軽減：</strong> 売り手のデフォルトまたは虚偽表示から買い手を保護。契約義務の履行時に売り手が支払いを受けることを保証。クロスボーダー取引のカウンターパーティーリスクを削減。</p>
+</div>
+<div class="card">
+<h3>ETF担保資金調達</h3>
+<p><strong>革新的担保構造：</strong> 買い手は従来の銀行ローンの代わりにETFポートフォリオを担保として提供。流動性担保による船舶金融と比較して低金利。企業の信用枠やバランスシートレバレッジへの影響なし。</p>
+<p><strong>プロセス：</strong> クライアントは当社投資部門でETFポートフォリオを維持。ポートフォリオ価値が船舶購入を裏付け（通常70-80% LTV）。船舶キャッシュフローに連動した柔軟な返済構造。</p>
+</div>
+</div>
+</section>
+
+<section class="wrap">
+<h2>サービスプロセス</h2>
+<div class="grid-2">
+<div class="card">
+<h3>発見・マッチング（1-2週間）</h3>
+<p>• 要件理解のための初期クライアント相談<br>
+• AIシステムがすべてのソース市場で在庫を検索<br>
+• 仕様、写真、価格を含むショートリスト提示<br>
+• 予備的な財務構造の議論</p>
+</div>
+<div class="card">
+<h3>検査・交渉（2-4週間）</h3>
+<p>• 独立海事調査員の契約<br>
+• 物理的検査と状態評価<br>
+• 調査結果に基づく価格交渉<br>
+• 契約書作成と法的レビュー</p>
+</div>
+<div class="card">
+<h3>取引実行（4-8週間）</h3>
+<p>• エスクロー口座設定と初期デポジット<br>
+• 書類準備（売渡証書、移転書類）<br>
+• 旗国登録と船級協会移転<br>
+• 最終支払いと所有権引渡し</p>
+</div>
+<div class="card">
+<h3>納品後サポート</h3>
+<p>• 旗国登録支援<br>
+• 保険配置と更新<br>
+• 乗組員採用調整（必要に応じて）<br>
+• 継続的な市場インテリジェンスと船隊拡大コンサルティング</p>
+</div>
+</div>
+</section>
+
+<section class="wrap">
+<h2>Avisailを選ぶ理由</h2>
+<div class="grid-2">
+<div class="card">
+<h3>テクノロジー駆動型効率</h3>
+<p>従来の船舶ブローカリッジは個人的ネットワークと手動検索に依存し、適切なマッチを見つけるのに数ヶ月かかることがよくあります。当社のAIプラットフォームは検索時間を数週間から数日に短縮し、包括的な市場カバレッジと即座のマッチング通知を提供します。</p>
+</div>
+<div class="card">
+<h3>金融イノベーション</h3>
+<p>当社のETF担保資金調達オプションは海事業界でユニークであり、投資ポートフォリオを持つ買い手に従来の船舶金融の代替を提供します。この構造は、銀行融資よりも迅速な承認、低コスト、柔軟性を提供します。</p>
+</div>
+<div class="card">
+<h3>クロスドメイン専門知識</h3>
+<p>純粋なブローカーとは異なり、当社は船舶売買と投資管理、技術開発を組み合わせています。クライアントは統合サービスの恩恵を受けます：売買プラットフォームアクセス、投資ポートフォリオ管理、安全な決済構造のすべてが一箇所で。</p>
+</div>
+<div class="card">
+<h3>地域市場知識</h3>
+<p>アジア太平洋および中東海事市場の深い理解、規制環境、港湾インフラ、現地買い手の嗜好を含む。当社の事業地域全体の造船所、ブローカー、旗国管理局との強力な関係。</p>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+<div class="footer-content">
+<div class="footer-col">
+<h4>会社</h4>
+<ul>
+<li><a href="/ja/about.html">会社概要</a></li>
+<li><a href="/ja/contact.html">お問い合わせ</a></li>
+<li><a href="/ja/index.html#business">事業内容</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>サービス</h4>
+<ul>
+<li><a href="/ja/services/vessel-trading.html">船舶売買</a></li>
+<li><a href="/ja/services/investment.html">投資運用（Aviscore）</a></li>
+<li><a href="/ja/services/technology.html">テクノロジー（ADCS）</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>法務</h4>
+<ul>
+<li><a href="/ja/privacy-policy.html">プライバシーポリシー</a></li>
+<li><a href="/ja/terms-of-service.html">利用規約</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2025 Avisail Technologies — All rights reserved.</p>
+</div>
+</div>
+</footer>
 </body>
 </html>
